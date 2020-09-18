@@ -18,7 +18,7 @@ function* authLogin({type, endpoint, method, bodyParams}) {
     let notiMessage = 'Login failed';
     const errorData = error?.response?.data;
     if (errorData && typeof errorData == 'string') {
-      notiMessage = error.response.data;
+      notiMessage = errorData;
     }
     yield put(
       showNotification({
