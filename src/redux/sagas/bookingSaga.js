@@ -32,7 +32,7 @@ function* onLoadBookingSaga({type, endpoint, method, bodyParams, onSuccess}) {
     let notiMessage = 'API failed';
     const errorData = error?.response?.data;
     if (errorData && typeof errorData == 'string') {
-      notiMessage = error.response.data;
+      notiMessage = errorData;
     }
     yield put(
       showNotification({
